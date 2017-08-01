@@ -103,8 +103,10 @@ function smart_images_add_size() {
 // Add the required scripts
 add_action( 'wp_enqueue_scripts', 'smart_images_add_scripts');
 function smart_images_add_scripts() {
-	wp_enqueue_script( 'vanilla-lazyload', 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/7.2.0/lazyload.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'smart-images', plugins_url( 'smart-images.js', __FILE__ ), array( 'vanilla-lazyload' ), '1.0.0', true );
+	if ( ! smart_images_is_disabled() ) {
+		wp_enqueue_script( 'vanilla-lazyload', 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.0.1/lazyload.min.js', array(), '8.0.1', true );
+		wp_enqueue_script( 'smart-images', plugins_url( 'smart-images.js', __FILE__ ), array( 'vanilla-lazyload' ), '1.0.0', true );
+	}
 }
 
 // Replace the featured image

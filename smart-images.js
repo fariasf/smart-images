@@ -1,6 +1,6 @@
 (function () {
 	new LazyLoad({
-		data_src: 'original-src',
-		data_srcset: 'original-srcset'
+		data_src: 'originalSrc',
+		data_srcset: 'originalSrcset'
 	});
 }());
